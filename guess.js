@@ -5,10 +5,14 @@ function Letter(letter) {
     this.letter = letter;
 }
 
-Letter.prototype.guessIntoWord = function (word) {
-    // word.split('');
-    // console.log(word + " Char Test");
-    return word;
+Letter.prototype.convertWordtoCharArary = function (word) {
+    // console.log("String test of Letter function guessIntoWord() " + word);
+
+    var charWordArray = word.split('');
+    console.log(charWordArray);
+
+    return charWordArray;
+
 };
 
 module.exports = Letter;

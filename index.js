@@ -7,13 +7,15 @@ var Letter = require('./guess');
 var hangman = new Word();
 var generateWord = {"word": hangman.getWord()}; //generates guess from getword() function.
 console.log(generateWord.word);
+
+//Convert Object to string in variable 'hangmanWard'
 var hangmanWord = generateWord.word;
 
 
 
 
 var hangmanLetter = new Letter();
-var testLetter = {"letter": hangmanLetter.guessIntoWord(hangmanWord)};
+var testLetter = {"letter": hangmanLetter.convertWordtoCharArary(hangmanWord)};
 
 
 

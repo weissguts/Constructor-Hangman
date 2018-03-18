@@ -3,14 +3,12 @@ function Word(word) {
 }
 
 Word.prototype.getWord = function () {
-    var word = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var randomWord = "";
+    var possible = ["javascript", "java", "python", "ruby", "go"];
 
-    for (var i = 0; i < 10; i++)
-        word += possible.charAt(Math.floor(Math.random() * possible.length));
-    console.log(word);
-
-    return word;
+    //Grabs random word from possible Array and returns that value.
+    randomWord = possible[Math.floor(Math.random() * possible.length)];
+    return randomWord;
 };
 
 module.exports = Word;
