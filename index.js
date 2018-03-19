@@ -22,17 +22,45 @@ var testLetter = '';
 console.log(letterArray.letter);
 
 
-//Start prompt npm package
+//Grab user input then send input to Letter object methods to test if guess is correct or not. 'Guess' can be lower case.
+//Used upper case of 'Guess' to make it easier to read in the console.
+
 prompt.start();
-prompt.message = console.log('Enter your guess (one letter at a time) _ ');
+prompt.message = console.log('Enter your guess (one letter at a time). You have 5 guesses. Good luck!');
 
-//Grab user input then send input to Letter object methods to test if guess is correct or not.
-prompt.get(['Guess'], function (err, result) {
-    console.log('You guessed ' + "'" + result.Guess + "'");
-    testLetter = result.Guess;
+function hangManMain() {
+    //Start prompt npm package
+    prompt.get(['guess'], function (err, result) {
+        testLetter += result.guess;
+        console.log('You guessed ' + [result.guess]);
 
-    hangmanLetter.guessLetter(letterArray, testLetter);
-});
+        if (testLetter == hangmanWord) {
+            console.log("Congrats, you win!");
+
+        } else {
+            if (letterArray.letter.includes(testLetter.toLowerCase()) === true) {
+                console.log("Working");
+                console.log(testLetter);
+                hangManMain();
+
+
+            } else if (letterArray.letter.includes(testLetter.toLowerCase()) === false) {
+                console.log("Guess again");
+                console.log(testLetter);
+                hangManMain();
+            };
+        };
+
+    });
+
+};
+
+hangManMain();
+
+
+
+
+
 
 
 
