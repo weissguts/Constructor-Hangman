@@ -13,17 +13,5 @@ Letter.prototype.convertWordtoCharArray = function (word) {
     return charWordArray;
 };
 
-// //Method to test if user guess from prompt is in the Char Array.
-// Letter.prototype.guessLetter = function (wordArray, guessLetter) {
-//     // for (var i = 0; i < 5; i++) {
-//     //     if (wordArray.letter.includes(guessLetter.toLowerCase()) === true) {
-//     //         console.log("Working");
-//     //         i++;
-//     //     } else if (wordArray.letter.includes(guessLetter.toLowerCase()) === false) {
-//     //         console.log("Guess again");
-//     //         i++;
-//     //     }
-//     // }
-// };
 
 module.exports = Letter;
