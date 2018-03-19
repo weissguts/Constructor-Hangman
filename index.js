@@ -6,16 +6,21 @@ var Letter = require('./guess');
 //Create new object in main file "hangman"
 var hangman = new Word();
 var generateWord = {"word": hangman.getWord()}; //generates guess from getword() function.
-console.log(generateWord.word);
+
 
 //Convert Object to string in variable 'hangmanWard'
 var hangmanWord = generateWord.word;
+console.log(hangmanWord);
 
 
 
 
 var hangmanLetter = new Letter();
-var testLetter = {"letter": hangmanLetter.convertWordtoCharArary(hangmanWord)};
+var letterArray = {"letter": hangmanLetter.convertWordtoCharArray(hangmanWord)};
+console.log(letterArray.letter);
+
+var testLetter = 'a';
+hangmanLetter.guessLetter(letterArray, testLetter);
 
 
 
